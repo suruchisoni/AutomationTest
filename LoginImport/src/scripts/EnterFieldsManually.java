@@ -19,10 +19,10 @@ public class EnterFieldsManually {
 		driver = webpage.openBrowser();
 	}
 	
-	/*@AfterTest
+	@AfterTest
 	public void afterTest(){
 		webpage.closeBrowser();
-	}*/
+	}
 
 	
 	@Test
@@ -38,14 +38,19 @@ public class EnterFieldsManually {
 			Thread.sleep(5000);
 			
 			driver.findElement(By.id("btnStartNewLoan")).click();
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			
-			driver.findElement(By.id("txtFirstName")).sendKeys("Tina");
-			driver.findElement(By.id("txtLastName")).sendKeys("Sham");
-			Thread.sleep(2000);
+				
+			//driver.findElement(By.xpath("//*[@id='txtFirstName']")).click();
+			driver.findElement(By.xpath("//input[@id='txtFirstName']")).sendKeys("Tina");
+			//driver.findElement(By.xpath("//*[@id='txtLastName']")).click();
+			driver.findElement(By.xpath("//input[@id='txtLastName']")).sendKeys("Sham");
 			
+			
+				
+			/*driver.findElement(By.id("txtSSN")).click();
 			driver.findElement(By.id("txtSSN")).sendKeys("1234567898");
-			Thread.sleep(3000);	
+			Thread.sleep(3000);	*/
 			
 			
 		

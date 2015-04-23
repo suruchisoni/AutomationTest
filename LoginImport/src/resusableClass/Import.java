@@ -40,7 +40,7 @@ public class Import {
 		driver.findElement(By.id("btnImport")).click();
 		Thread.sleep(5000);
 		
-	    driver.findElement(By.id("fileLoan")).sendKeys("C:\\Suruchi\\workspace\\AutomationTest\\LoginImport\\testdata\\Path full loan.brw");
+	    driver.findElement(By.id("fileLoan")).sendKeys("\\testdata\\Path full loan.brw");
 		Thread.sleep(4000);
 		
 		driver.findElement(By.id("butUpload")).click();
