@@ -8,12 +8,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Import {
-	
+	//create instance of WebPage class called webpage
 	WebPage webpage;
 	FirefoxDriver driver;
 	
 	@BeforeTest
-	public void beforeTest(){
+	public void beforeTest(){ 
+		
+		//create object using new and call method openBrowser from WebPage class
 		webpage = new  WebPage();
 		driver = webpage.openBrowser();
 	}
@@ -38,7 +40,7 @@ public class Import {
 		driver.findElement(By.id("btnImport")).click();
 		Thread.sleep(5000);
 		
-	    driver.findElement(By.id("fileLoan")).sendKeys("C:\\PNTDATA\\BORROWER\\Path Full Loan.brw");
+	    driver.findElement(By.id("fileLoan")).sendKeys("C:\\Suruchi\\workspace\\AutomationTest\\LoginImport\\testdata\\Path full loan.brw");
 		Thread.sleep(4000);
 		
 		driver.findElement(By.id("butUpload")).click();
