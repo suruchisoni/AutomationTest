@@ -1,6 +1,7 @@
 package scripts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -19,10 +20,10 @@ public class EnterFieldsManually {
 		driver = webpage.openBrowser();
 	}
 	
-	@AfterTest
+	/*@AfterTest
 	public void afterTest(){
 		webpage.closeBrowser();
-	}
+	}*/
 
 	
 	@Test
@@ -41,17 +42,17 @@ public class EnterFieldsManually {
 			Thread.sleep(6000);
 			
 				
-			//driver.findElement(By.xpath("//*[@id='txtFirstName']")).click();
+			driver.findElement(By.xpath("//*[@id='txtFirstName']")).click();
 			driver.findElement(By.xpath("//input[@id='txtFirstName']")).sendKeys("Tina");
-			//driver.findElement(By.xpath("//*[@id='txtLastName']")).click();
+			driver.findElement(By.xpath("//*[@id='txtLastName']")).click();
 			driver.findElement(By.xpath("//input[@id='txtLastName']")).sendKeys("Sham");
 			
+			driver.findElement(By.xpath(".//*[@id='txtSSN']")).click();
+			driver.findElement(By.xpath(".//*[@id='txtSSN']")).sendKeys(Keys.HOME +"481878483");
 			
-				
-			/*driver.findElement(By.id("txtSSN")).click();
-			driver.findElement(By.id("txtSSN")).sendKeys("1234567898");
-			Thread.sleep(3000);	*/
-			
+			driver.findElement(By.xpath(".//*[@id='txtDOB']")).click();
+			driver.findElement(By.xpath(".//*[@id='txtDOB']")).sendKeys(Keys.HOME +"12121957"); 	
+		
 			
 		
 		
