@@ -2,24 +2,20 @@ package resusableClass;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
 public class WebPage {
-	
+
 	public FirefoxDriver driver;
-	
-	
-	public FirefoxDriver openBrowser(){
-		
+
+	public FirefoxDriver openBrowser() {
+
 		driver = new FirefoxDriver();
 		driver.get("https://qa1.calyxpath.com");
 		driver.manage().window().maximize();
 		return driver;
-		
-				
+
 	}
-	
-	
-	public void closeBrowser(){
+
+	public void closeBrowser() {
 		driver.quit();
 	}
 
