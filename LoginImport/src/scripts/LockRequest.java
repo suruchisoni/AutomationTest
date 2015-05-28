@@ -48,7 +48,7 @@ public class LockRequest{
 		Thread.sleep(10000);
 		driver.findElement(By.id("imgSelectLoanProgram")).click();
 		Thread.sleep(15000);
-		/*
+		
 		WebElement elementToClick = driver.findElement(By.xpath(".//*[@id='divLscPricingResult']/table[1]/tbody/tr/td[1]/input"));
 		elementToClick.click();
 		
@@ -56,7 +56,7 @@ public class LockRequest{
 		
 		driver.findElement(By.id("btnRequestLock")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.id("aLogout")).click();*/
+		driver.findElement(By.id("aLogout")).click();
 				
 	}
 	
