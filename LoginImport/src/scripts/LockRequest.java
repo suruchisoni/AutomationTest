@@ -35,7 +35,7 @@ public class LockRequest{
 		
 	@Test
 	public void lockRequest() throws InterruptedException{
-		//Thread.sleep(15000);
+	    Thread.sleep(15000);
 		WebElement element = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='divSubMenu']/div/li/a/span[text()='Lock']")));
 		driver.findElement(By.xpath("//*[@id='divSubMenu']/div/li/a/span[text()='Lock']")).click();
 		//driver.findElement(By.xpath("//*[@id='secMenu6']/a/span")).click();
@@ -52,11 +52,16 @@ public class LockRequest{
 		WebElement elementToClick = driver.findElement(By.xpath(".//*[@id='divLscPricingResult']/table[1]/tbody/tr/td[1]/input"));
 		elementToClick.click();
 		
-		driver.findElement(By.id("btnPPESelect")).click();
+		driver.findElement(By.id("btnProductSelect")).click();
 		
 		driver.findElement(By.id("btnRequestLock")).click();
+		Thread.sleep(9000);
+		WebElement radioBtn = driver.findElement(By.xpath(".//*[@id='chkCopyToLoanIndicator']"));
+		radioBtn.click();
+		//driver.findElement(By.id("chkCopyToLoanIndicator")).click();
+		driver.findElement(By.id("btnPopupRequestLock")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.id("aLogout")).click();
+		//driver.findElement(By.id("aLogout")).click();
 				
 	}
 	
