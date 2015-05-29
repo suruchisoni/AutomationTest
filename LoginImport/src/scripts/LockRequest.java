@@ -1,5 +1,7 @@
 package scripts;
 
+import org.testng.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -53,15 +55,32 @@ public class LockRequest{
 		elementToClick.click();
 		
 		driver.findElement(By.id("btnProductSelect")).click();
+		Thread.sleep(5000);
 		
 		driver.findElement(By.id("btnRequestLock")).click();
-		Thread.sleep(9000);
+		Thread.sleep(5000);
+		
+		//WebElement element1 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ui-id-4']")));
+		
 		WebElement radioBtn = driver.findElement(By.xpath(".//*[@id='chkCopyToLoanIndicator']"));
+		Thread.sleep(3000);
 		radioBtn.click();
+		Thread.sleep(3000);
 		//driver.findElement(By.id("chkCopyToLoanIndicator")).click();
 		driver.findElement(By.id("btnPopupRequestLock")).click();
 		Thread.sleep(5000);
+		
+		String lockStatus = driver.findElement(By.xpath(".//*[@id='divLockSummaryDetail']/div[2]/div[1]/dl/dd[1]")).getText();
+		String lockSubStatus = driver.findElement(By.xpath(".//*[@id='divLockSummaryDetail']/div[2]/div[1]/dl/dd[2]")).getText();
+		
+		Assert.assertEquals(lockStatus, "Not Locked");
+		System.out.println("Lock status is correct :" +lockStatus);
+		
+		Assert.assertEquals(lockSubStatus, "Lock Requested");
+		System.out.println("Lock Substatus is correct :" +lockSubStatus);
+		
 		//driver.findElement(By.id("aLogout")).click();
+		
 				
 	}
 	
