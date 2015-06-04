@@ -30,10 +30,10 @@ public class LockRequest{
 		importobj.importData();
 	}
 		
-	/*@AfterTest
+	@AfterTest
 	public void afterTest(){
 		webpageobj.closeBrowser();		
-	}*/
+	}
 		
 	@Test
 	public void lockRequest() throws InterruptedException{
@@ -79,9 +79,8 @@ public class LockRequest{
 		Assert.assertEquals(lockSubStatus, "Lock Requested");
 		System.out.println("Lock Substatus is correct :" +lockSubStatus);
 		
-		//driver.findElement(By.id("aLogout")).click();
-		
-				
+		driver.findElement(By.id("aLogout")).click();
+						
 	}
 	
 	

@@ -13,19 +13,19 @@ public class Import {
 	WebPage webpage;
 	FirefoxDriver driver;
 
-	@BeforeTest
+	
 	public void beforeTest() {
 		// create object using new and call method openBrowser from WebPage
 		webpage = new WebPage();
 		setDriver(webpage.openBrowser());
 	}
 
-	@AfterTest
+	
 	public void afterTest() {
 		webpage.closeBrowser();
 	}
 
-	@Test
+	
 	public void loginTest() throws InterruptedException {
 
 		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");
@@ -38,7 +38,7 @@ public class Import {
 		Thread.sleep(5000);
 	}
 
-	@Test(dependsOnMethods = { "loginTest" })
+	
 	public void importData() throws InterruptedException {
 		Thread.sleep(5000);
 		driver.findElement(By.id("btnImport")).click();
@@ -56,11 +56,18 @@ public class Import {
 		Thread.sleep(5000);*/
 	}
 	
-	/*//login as lock desk
-	public void loginAsLockDesk(){
+	//login as lock desk
+	public void loginAsLockDesk() throws InterruptedException{
+		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");
+
+		driver.findElement(By.id("UserName")).sendKeys("ssald");
+
+		driver.findElement(By.id("Password")).sendKeys("1234");
+
+		driver.findElement(By.id("btnLogOnSubmit")).click();
+		Thread.sleep(5000);
 		
-		
-	}*/
+	}
 
 	public FirefoxDriver getDriver() {
 		return driver;
