@@ -15,29 +15,29 @@ public class LockConfirmation {
 	Import importobj;
 	FirefoxDriver driver;
 	
-	@BeforeTest
+	@Test
 	public void beforeTest() throws InterruptedException{
 		webpageobj = new WebPage();
 		driver = webpageobj.openBrowser();
-		importobj.setDriver(driver);
+		importobj = new Import();
+        importobj.setDriver(driver);
 		importobj.loginAsLockDesk();
+		Thread.sleep(10000);
 		
 	}
 		
-	@AfterTest
+	/*@AfterTest
 	public void afterTest(){
 		webpageobj.closeBrowser();		
-	}
+	}*/
     
 	@Test
 	public void lockConfirmation() throws InterruptedException{
 		driver.findElement(By.xpath(".//*[@id='tblBorrower']/tbody/tr[1]/td[2]/div")).click();
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		driver.findElement(By.xpath(".//*[@id='thirdMenu2']/a/span")).click();
+		Thread.sleep(10000);
 		driver.findElement(By.id("btnConfirm")).click();
-		
-		
-		
 		
 	}
 	
