@@ -2,6 +2,7 @@ package scripts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,10 +27,10 @@ public class LockConfirmation {
 		
 	}
 		
-	/*@AfterTest
+	@AfterTest
 	public void afterTest(){
 		webpageobj.closeBrowser();		
-	}*/
+	}
     
 	@Test
 	public void lockConfirmation() throws InterruptedException{
@@ -38,6 +39,17 @@ public class LockConfirmation {
 		driver.findElement(By.xpath(".//*[@id='thirdMenu2']/a/span")).click();
 		Thread.sleep(10000);
 		driver.findElement(By.id("btnConfirm")).click();
+		
+		String lockStatus = driver.findElement(By.xpath(".//*[@id='divLockSummaryDetail']/div[2]/div[1]/dl/dd[1]")).getText();
+		String lockSubStatus = driver.findElement(By.xpath(".//*[@id='divLockSummaryDetail']/div[2]/div[1]/dl/dd[2]")).getText();
+		
+		Assert.assertEquals(lockStatus, "Locked");
+		System.out.println("Lock status is correct :" +lockStatus);
+		
+		Assert.assertEquals(lockSubStatus, "Confirmed");
+		System.out.println("Lock Substatus is correct :" +lockSubStatus);
+		
+		driver.findElement(By.id("aLogout")).click();
 		
 	}
 	

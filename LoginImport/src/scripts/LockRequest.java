@@ -53,7 +53,6 @@ public class LockRequest{
 		
 		WebElement elementToClick = driver.findElement(By.xpath(".//*[@id='divLscPricingResult']/table[1]/tbody/tr/td[1]/input"));
 		elementToClick.click();
-		
 		driver.findElement(By.id("btnProductSelect")).click();
 		Thread.sleep(5000);
 		

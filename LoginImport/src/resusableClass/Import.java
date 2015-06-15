@@ -44,7 +44,8 @@ public class Import {
 		driver.findElement(By.id("btnImport")).click();
 		Thread.sleep(5000);
 
-		File file = new File("testdata\\Path full loan.brw");
+		//File file = new File("testdata\\Path full loan.brw");
+		File file = new File("testdata\\newton.brw");
 
 		driver.findElement(By.id("fileLoan")).sendKeys(file.getAbsolutePath());
 		Thread.sleep(4000);
