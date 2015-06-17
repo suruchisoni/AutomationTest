@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import resusableClass.WebPage;
+import resusableClass.WebPage1;
 
 public class EnterFieldsManually {
 	
@@ -16,7 +16,7 @@ public class EnterFieldsManually {
 	
 	@BeforeTest
 	public void beforeTest(){
-		webpage = new  WebPage();
+		webpage = new  WebPage1();
 		driver = webpage.openBrowser();
 	}
 	

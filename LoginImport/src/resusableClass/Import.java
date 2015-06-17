@@ -8,24 +8,29 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Import {
-	// create instance of WebPage class called webpage
+public class Import{
+	FirefoxDriver driver;
+	public Import(FirefoxDriver driver){
+		this.driver = driver;
+		
+	}
+	/*// create instance of WebPage class called webpage
 	WebPage webpage;
 	FirefoxDriver driver;
 
 	
 	public void beforeTest() {
 		// create object using new and call method openBrowser from WebPage
-		webpage = new WebPage();
+		webpage = new WebPage(); 
 		setDriver(webpage.openBrowser());
 	}
 
 	
 	public void afterTest() {
 		webpage.closeBrowser();
-	}
-
+	}*/
 	
+		
 	public void loginTest() throws InterruptedException {
 
 		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");

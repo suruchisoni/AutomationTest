@@ -1,35 +1,26 @@
 package scripts;
 
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-
 import org.testng.annotations.Test;
 
-import resusableClass.Web;
+import resusableClass.WebPage;
 
-public class TestClass extends Web{
+public class TestClass extends WebPage {
 	
-	Web web;
-	
-	public TestClass(WebDriver driver){
-		super(driver);
+	private WebPage web;
+
+	@BeforeTest
+	public void beforeTest() throws InterruptedException {
+		web =  new WebPage();
+		driver = web.openBrowser();
+		Thread.sleep(5000);
 	}
-	
-@BeforeTest
-	public void beforeTest() throws InterruptedException{
-	//web = new Web(driver);
-	Web.openBrowser();
-	Thread.sleep(5000);
-		
-	}
-	
-@Test
+
+	@Test
 	public void loginTest() throws InterruptedException {
-        
+
 		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");
 
 		driver.findElement(By.id("UserName")).sendKeys("ssalo");
@@ -40,4 +31,8 @@ public class TestClass extends Web{
 		Thread.sleep(5000);
 	}
 
+	@AfterTest
+	public void afterTest(){
+		web.closeBrowser();
+	}
 }
