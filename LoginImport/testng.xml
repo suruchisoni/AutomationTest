@@ -3,10 +3,15 @@
 
 <suite name="Suite1">
 
-  <test name="Lock Request and Confirmaton">
+  <test name="Lock Request">
     <classes>
        <class name="scripts.LockRequest" />
-       <class name="scripts.LockConfirmation" />
+       </classes>
+  </test>
+  
+   <test name="Lock Confirmation">
+    <classes>
+   <class name="scripts.LockConfirmation" />
     </classes>
   </test>
 </suite>  	
