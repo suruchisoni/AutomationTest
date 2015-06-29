@@ -8,7 +8,8 @@ public class WebPage {
 
 	public FirefoxDriver openBrowser() {
 		driver = new FirefoxDriver();
-		driver.get("https://qa1.calyxpath.com");
+		//driver.get("https://qa1.calyxpath.com");
+		driver.get("https://www.calyxpath.com/Account/LogOn?ReturnUrl=%2f");
 		driver.manage().window().maximize();
 		return driver;
 	}

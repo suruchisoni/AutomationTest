@@ -33,7 +33,7 @@ public class Import{
 		
 	public void loginTest() throws InterruptedException {
 
-		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");
+		driver.findElement(By.id("Account")).sendKeys("1111111ms");
 
 		driver.findElement(By.id("UserName")).sendKeys("ssalo");
 
@@ -64,7 +64,7 @@ public class Import{
 	
 	//login as lock desk
 	public void loginAsLockDesk() throws InterruptedException{
-		driver.findElement(By.id("Account")).sendKeys("Calyxaz4");
+		driver.findElement(By.id("Account")).sendKeys("1111111ms");
 
 		driver.findElement(By.id("UserName")).sendKeys("ssald");
 
